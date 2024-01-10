@@ -1,0 +1,200 @@
+<html>
+
+<head>
+    <title>
+        Insightopia
+    </title>
+    <link rel="stylesheet" href="../External.css">
+
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Comatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <linke rel="stylesheet" href="External.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" 
+    referrerpolicy="no-referrer" />
+
+
+    <script>
+
+    
+
+        function displayDateTime() {
+      var currentDate = new Date();
+      var dateElement = document.getElementById('date');
+      var timeElement = document.getElementById('time');
+            
+      var formattedDate = currentDate.toLocaleDateString();
+      var formattedTime = currentDate.toLocaleTimeString();
+
+      dateElement.textContent = 'Date: ' + formattedDate;
+      timeElement.textContent = 'Time: ' + formattedTime;
+    }
+
+    
+    </script>
+
+
+    <style>
+        
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #000;
+    color: white;
+    padding: 20px 45px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+   
+}
+
+button:hover {
+    background-color: #555;
+}
+
+.border{
+
+border-style: transparent;
+border-width: 5px;
+background-color: white;
+margin-left:7%;
+margin-right: 7%;
+align-items: center;
+padding: none;
+margin-top: 25px;
+margin-bottom: 25px;
+box-shadow: 5px 5px 9px;
+
+}
+
+
+    </style>
+</head>
+<body>
+
+
+
+     <div class="background"></div> 
+
+   <div class="navbar">
+    <a href="../Home Page.html"><img src="../logo.png" class="logo"></a>
+    <ul>
+    <li><a href="../Home page.html">Home</a></li>
+    <li><a href="About us.html">About us</a></li>
+    <li><a href="Contact us.html">Contact</a></li>
+    <li><a href="Reviews.html">Reviews</a></li>
+    <li><a href="Sitemap.html">Sitemap</a></li>
+    <li><a href="../Articles/Articles.html">Articles</a></li>
+    <li><a href="Registry.html">Registration</a></li>
+    </ul>
+
+</div>
+<hr style="height:5px;box-shadow: 1px 1px 5px; background-color:rgb(17,223,171);">
+
+<div class="border">
+
+
+    <h2 style="margin-left: 40%;" >Registration Form</h2><br><br>
+    <p id="date"></p>
+    <p id="time"></p>
+    <script>
+        displayDateTime();
+      </script>
+<br>
+<form onsubmit="return false;"> 
+
+    User Name : <input type="text" id="username">
+    <p id="p1" style="color:red"></p><br>
+    password : <input type="password" id="password">
+    <p id="p2" style="color:red"></p><br>
+    Gender: <br>
+    <br>
+    Male  <input type="radio" id="gender" name="gender">
+   
+    Female<input type="radio" id="gender" name="gender">
+    <p id="p3" style="color: red;"></p><br>
+
+    <textarea id ="TextArea"></textarea>
+
+    <br>
+    <button onclick="fun()">Submit</button>
+</form>
+ <script>
+
+function fun(){
+var P =document.getElementById("password").value;
+var D =document.getElementById("username").value;
+document.getElementById("TextArea").value="Username: "+P;
+document.getElementById("TextArea").value+="\nPassword: "+D;
+
+if(P=="")
+{document.getElementById("p2").innerHTML="Invalid Password";}
+
+
+if(D==""){
+document.getElementById("p1").innerHTML="Invalid Name";}
+
+        var g = document.getElementById("gender").value;
+        var flag = false;
+        var G;
+
+        for(i=0;i<gender.length;i++)
+            if(gender[i].checked){
+            flag=true;
+            G=gender[i].value;}
+            if(flag==false)
+            document.getElementById("p3").innerHTML="Choose a gender";
+    else if(gender[0].checked){
+            document.getElementById("TextArea").value+="\nGender: Male";
+        }
+        else
+            document.getElementById("TextArea").value+="\nGender: Female";
+        }
+
+
+setInterval(displayDateTime,1000);
+</script>
+</div>
+
+<footer style=" font-size: 15px;">
+    <div class="footerContainer">
+        <div class="socialIcons">
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-twitter"></i></a>
+            <a href=""><i class="fa-brands fa-youtube"></i></a>
+        </div>
+        <div class="footerNav">
+            <ul>
+                <li><a href="../Home Page.html">Home</a></li>
+                <li><a href="Contact us.html">Contact Us</a></li>
+                <li><a href="Privacy Policy.html">Privacy Policy</a></li>
+                <li><a href="Terms Of Service.html">Terms Of Service</a></li>
+
+            </ul>
+      </div> 
+
+    </div>
+</footer>
+</body>
+
+
+</html>
